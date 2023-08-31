@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply
+    text-grey-975 dark:text-white hover:text-grey-900 dark:hover:text-grey-100
+      transition-all duration-300 ease-in-out;      
+  }
+  .router-link-exact-active {
+    @apply border-b-2 border-grey-975 dark:border-white;
+  }
+}
