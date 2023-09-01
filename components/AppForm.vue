@@ -145,6 +145,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -158,28 +160,26 @@ export default {
   },
   methods: {
     formSubmit() {
-      this.formRequest().then( (result) => {
-        console.log(result)
-      }).catch( (error) => {
-        console.error('Contact form could not be send', error)
-      });
+      // const axios = $axios
+      const vm = this
+      const formElement = vm.$refs.formElement
+      const formData = new FormData(formElement)
+      const url =
+        'https://docs.google.com/forms/d/e/1FAIpQLSc02pJW9A3vfC9nkzhkx5R3DajMl7vvO7kNCc5S9QWQ7rd4DA/formResponse'
+      this.errors = []
+      axios
+        .post(url, formData)
+        .then(function (response) {
+          // eslint-disable-next-line no-undef
+          $nuxt.$router.push('/initiation/confirmation')
+        })
+        // eslint-disable-next-line handle-callback-err
+        // eslint-disable-next-line node/handle-callback-err
+        .catch(function (error) {
+          // eslint-disable-next-line no-undef
+          $nuxt.$router.push('/initiation/confirmation')
+        })
     },
-    async formRequest() {
-      return await $fetch('https://docs.google.com/forms/d/e/1FAIpQLSc02pJW9A3vfC9nkzhkx5R3DajMl7vvO7kNCc5S9QWQ7rd4DA/formResponse', { 
-        // headers: {
-        //   "Content-Type": "multipart/form-data",
-        // },
-        method: 'POST',
-        body: {
-          'firstName': this.firstName,
-          'lastName': this.lastName,
-          'email': this.email,
-          'answerA': this.answerA,
-          'answerB': this.answerB,
-          'answerC': this.answerC,
-        }
-      })
-    }
-  }
+  },
 }
 </script>
