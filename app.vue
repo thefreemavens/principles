@@ -15,7 +15,7 @@
         <!-- <NuxtLoadingIndicator color="#47ffd4" :height="3" /> -->
         <NuxtPage />
       </PageContainer>
-    <AppFooter />
+    <!-- <AppFooter /> -->
   </AppContainer>
 </template>
 
@@ -53,6 +53,7 @@ useHead({
   //
   // Leave for syntex options example:
   bodyAttrs: {
+    // used by Lenis plugin
     class: 'app'
   },
   // script: [ { innerHTML: 'console.log(\'Hello world\')' } ]

@@ -201,8 +201,8 @@ const menuItems3 = ref([
   // },
   {
     title: '#Initiation',
-    slug: 'initiation',
-    url: '/initiation'
+    slug: 'init',
+    url: '/init'
   }
 ])
 
