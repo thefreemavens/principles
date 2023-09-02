@@ -15,7 +15,7 @@
     <section class="flex-1">
       <MotionHero class="invisible lg:visible w-full h-[100dvh] scale-90 flex justify-center items-center"/>
     </section>
-    <section class="w-full lg:max-w-xl h-[100dvh] px-20 py-8 lg:px-12 self-end bg-grey-50 dark:bg-grey-950">
+    <section class="w-full lg:max-w-xl h-[100dvh] px-20 py-8 lg:px-12 bg-grey-50 dark:bg-grey-950">
       <AppLogomark class="w-16 h-16 mx-auto" />
       <AppForm />
     </section>

@@ -2,8 +2,11 @@
   <!-- <div class="flex flex-col justify-center items-center"> -->
     <div class="max-w-md mx-auto">
 
-      <hr class="border-gray-100 dark:border-gray-700 my-6" />
-      <h3 class="text-2xl my-4 tracking-wide-xl text-left">Request an Invite</h3>
+      <hr class="border-gray-100 dark:border-gray-900 my-6" />
+      <h3 class="text-3xl my-8 tracking-wide-xl --text-center">Request an Invite</h3>
+      <p class="mb-8 text-base">
+        Please tell us a bit about yourself so that we may review your request for an application.¹
+      </p>
       <!-- <hr class="border-gray-100 dark:border-gray-700 my-6" /> -->
 
     <form
@@ -32,35 +35,28 @@
       <!-- Last Name -->
       <div class="form-group group">
         <input
-        class="peer w-full h-14 px-4 text-sm peer"
+        class="peer"
         v-model="lastName"
         type="text"
         required="required"
         name="entry.57994274"
         />
         <label for="lastName"
-          class="
-            flex
-            items-center
-            px-3
-            text-base group-focus-within:text-xs peer-valid:text-xs
-            top-3.5 group-focus-within:top-5 peer-valid:top-5
-            group-focus-within:-translate-y-full peer-valid:-translate-y-full
-        ">
+          class="">
           Last Name
         </label>
       </div>
 
       <!-- Email -->
       <div class="form-group group">
-          <label for="user-email"> Email </label>
-          <input
-            class="peer"
-            v-model="email"
-            type="text"
-            required="required"
-            name="entry.1097449195"
-          />
+        <input
+          class="peer"
+          v-model="email"
+          type="text"
+          required="required"
+          name="entry.1097449195"
+        />
+        <label for="user-email"> Email </label>
       </div>
 
       <!-- <div class="question">
@@ -138,7 +134,7 @@
             dark:bg-white
             text-white
             dark:text-grey-975
-            py-2
+            py-2.5
             rounded
             font-bold
             uppercase
