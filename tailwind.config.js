@@ -6,10 +6,10 @@ module.exports = {
       //   '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       //   '4xl': '0 40px 70px -20px rgba(0, 0, 0, 0.3)',
       // },
-      // fontSize: {
-      //   '2xs': '0.675rem',
-      //   '3xs': '0.625rem'
-      // },
+      fontSize: {
+        '2xs': '0.675rem',
+        '3xs': '0.625rem'
+      },
       colors: {
         // TFM (Indigo)
         // brand: {
