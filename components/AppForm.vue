@@ -1,6 +1,10 @@
 <template>
-  <div class="flex justify-center items-center">
-    Form
+  <!-- <div class="flex flex-col justify-center items-center"> -->
+    <div class="max-w-md mx-auto">
+
+      <hr class="border-gray-100 dark:border-gray-700 my-6" />
+      <h3 class="text-2xl my-4 tracking-wide-xl text-left">Request an Invite</h3>
+      <!-- <hr class="border-gray-100 dark:border-gray-700 my-6" /> -->
 
     <form
       id="join"
@@ -8,53 +12,58 @@
       class="text-left"
       @submit.prevent="formSubmit()"
     >
-      <hr class="border-gray-100 dark:border-gray-700 my-6" />
-      <h3
-        class="font-serif text-2xl my-4 uppercase tracking-wide-xl text-center"
-      >
-        Contact
-      </h3>
-      <hr class="border-gray-100 dark:border-gray-700 my-6" />
       <!-- First Name -->
-      <div class="form-group">
-        <!-- <validation-provider v-slot="{ errors }" rules="required|alpha"> -->
-          <label for="firstName">First Name</label>
-          <input
-            v-model="firstName"
-            type="text"
-            required="required"
-            name="entry.1090129806"
-          />
-        <!-- </validation-provider> -->
+      <div class="form-group group">
+        <input
+        class="peer"
+        v-model="firstName"
+        type="text"
+        required="required"
+        name="entry.1090129806"
+        />
+        <label
+          for="firstName"
+          class=""
+        >
+          First Name
+        </label>
       </div>
 
       <!-- Last Name -->
-      <div class="form-group">
-        <!-- <validation-provider v-slot="{ errors }" rules="required|alpha"> -->
-          <label for="lastName">Last Name</label>
-          <input
-            v-model="lastName"
-            type="text"
-            required="required"
-            name="entry.57994274"
-          />
-        <!-- </validation-provider> -->
+      <div class="form-group group">
+        <input
+        class="peer w-full h-14 px-4 text-sm peer"
+        v-model="lastName"
+        type="text"
+        required="required"
+        name="entry.57994274"
+        />
+        <label for="lastName"
+          class="
+            flex
+            items-center
+            px-3
+            text-base group-focus-within:text-xs peer-valid:text-xs
+            top-3.5 group-focus-within:top-5 peer-valid:top-5
+            group-focus-within:-translate-y-full peer-valid:-translate-y-full
+        ">
+          Last Name
+        </label>
       </div>
 
       <!-- Email -->
-      <div class="form-group">
-        <!-- <validation-provider v-slot="{ errors }" rules="required|email"> -->
+      <div class="form-group group">
           <label for="user-email"> Email </label>
           <input
+            class="peer"
             v-model="email"
             type="text"
             required="required"
             name="entry.1097449195"
           />
-        <!-- </validation-provider> -->
       </div>
 
-      <div class="question">
+      <!-- <div class="question">
         <h4 class="">Question 1</h4>
         <p>
           As to be understood from
@@ -62,10 +71,10 @@
           , what does the old saying "There is nothing new under the sun"
           means?
         </p>
-      </div>
+      </div> -->
 
       <!-- Form: Question 1 -->
-      <div class="form-group">
+      <!-- <div class="form-group">
           <textarea
             v-model="answerA"
             type="text"
@@ -74,19 +83,19 @@
             cols="40"
             rows="5"
           />
-      </div>
+      </div> -->
 
-      <div class="question">
+      <!-- <div class="question">
         <h4 class="">Question 2</h4>
         <p>
           As to be understood from
           <NuxtLink to="../natural-law/"> Episode 2 </NuxtLink>
           , Truth, by its very nature, is Beligerent. Why so?
         </p>
-      </div>
+      </div> -->
 
       <!-- Form: Question 2 -->
-      <div class="form-group">
+      <!-- <div class="form-group">
           <textarea
             v-model="answerB"
             type="text"
@@ -95,19 +104,19 @@
             cols="40"
             rows="5"
           />
-      </div>
+      </div> -->
 
-      <div class="question">
+      <!-- <div class="question">
         <h4 class="">Question 3</h4>
         <p clas>
           As to be understood from
           <NuxtLink to="../natural-law/"> Episode 3 </NuxtLink>
           , what is considered to be a Logical Fallacy?
         </p>
-      </div>
+      </div> -->
 
       <!-- Form: Question 2 -->
-      <div class="form-group">
+      <!-- <div class="form-group">
           <textarea
             v-model="answerC"
             type="text"
@@ -116,30 +125,33 @@
             cols="40"
             rows="5"
           />
-      </div>
-
-      <!-- Form Disclaimers -->
-      <ol
-        class="text-left -mt-2 text-xs text-gray-500 list-outsude pl-4 list-decimal"
-      >
-        <li class="pl-2">
-          All submissions are private and will never be published.
-        </li>
-        <li class="pl-2">
-          Submissions that are not in the English language will be rejected.
-        </li>
-        <li class="pl-2">Processing may take up to 6 days.</li>
-      </ol>
+      </div> -->
 
       <!-- Submit Button -->
-      <div class="w-full text-center my-10">
-        <button>Send</button>
-        <!-- <AppButton
+        <button
           :disabled="invalid"
-          title="Get Initiated"
-          class="fill-c text-sm"
-        /> -->
-      </div>
+          class="
+            w-full
+            text-center
+            mt-2
+            bg-grey-975
+            dark:bg-white
+            text-white
+            dark:text-grey-975
+            py-2
+            rounded
+            font-bold
+            uppercase
+            text-xs
+        ">
+        Request Invite
+      </button>
+
+            <!-- Form Disclaimers -->
+            <span class="text-xs text-gray-500">
+        All submissions are kept secure and private.
+      </span>
+
     </form>
   </div>
 </template>

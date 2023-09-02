@@ -2,29 +2,29 @@
 module.exports = {
   theme: {
     extend: {
-      boxShadow: {
-        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-        '4xl': '0 40px 70px -20px rgba(0, 0, 0, 0.3)',
-      },
-      fontSize: {
-        '2xs': '0.675rem',
-        '3xs': '0.625rem'
-      },
+      // boxShadow: {
+      //   '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+      //   '4xl': '0 40px 70px -20px rgba(0, 0, 0, 0.3)',
+      // },
+      // fontSize: {
+      //   '2xs': '0.675rem',
+      //   '3xs': '0.625rem'
+      // },
       colors: {
         // TFM (Indigo)
-        brand: {
-          50: '#EDE9FF',
-          100: '#DBD3FF',
-          200: '#C9BEFF',
-          300: '#A18EFF',
-          400: '#7A5EFF',
-          500: '#6342FF',
-          600: '#5337D7',
-          700: '#3E28A3',
-          800: '#2B1C70',
-          900: '#1F1258',
-          950: '#0F082B'
-        },
+        // brand: {
+        //   50: '#EDE9FF',
+        //   100: '#DBD3FF',
+        //   200: '#C9BEFF',
+        //   300: '#A18EFF',
+        //   400: '#7A5EFF',
+        //   500: '#6342FF',
+        //   600: '#5337D7',
+        //   700: '#3E28A3',
+        //   800: '#2B1C70',
+        //   900: '#1F1258',
+        //   950: '#0F082B'
+        // },
         grey: {
           50: '#F3F3F7',
           100: '#E8E8F0',
@@ -41,16 +41,16 @@ module.exports = {
           950: '#0C0C11',
           975: '#060608'
         },
-        red: { 555: '#f7112f' },
-        orange: { 555: '#ff8700' },
-        yellow: { 555: '#fdf516' },
-        lime: { 555: '#a1ff0a' },
-        green: { 555: '#0aff99' },
-        cyan: { 555: '#0aefff' },
-        blue: { 555: '#0022ff' },
-        indigo: { 555: '#580aff' },
-        violet: { 555: '#be0aff' },
-        pink: { 555: '#ff00a1' },
+        // red: { 555: '#f7112f' },
+        // orange: { 555: '#ff8700' },
+        // yellow: { 555: '#fdf516' },
+        // lime: { 555: '#a1ff0a' },
+        // green: { 555: '#0aff99' },
+        // cyan: { 555: '#0aefff' },
+        // blue: { 555: '#0022ff' },
+        // indigo: { 555: '#580aff' },
+        // violet: { 555: '#be0aff' },
+        // pink: { 555: '#ff00a1' },
         // TOGW (Neon Green)
         // brand: {
         //   50: '#edfffb',
