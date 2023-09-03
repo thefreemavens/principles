@@ -23,7 +23,7 @@
   textarea,
   select {
     @apply
-      rounded w-full outline-none relative z-10
+      rounded w-full outline-none
       my-0 pb-2 pt-7 px-3
       text-base leading-tight
       text-grey-900 dark:text-white
@@ -38,7 +38,7 @@
 
   label {
     @apply
-      absolute flex items-center z-0
+      absolute flex items-center -z-[1]
       px-3
       text-grey-500 dark:text-grey-500
       text-base group-focus-within:text-xs peer-valid:text-xs

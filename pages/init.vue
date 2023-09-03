@@ -13,16 +13,13 @@
   <!-- End grid -->
   <div class="flex">
     <section class="flex-1">
-      <MotionHero class="invisible lg:visible w-full h-[100dvh] scale-90 flex justify-center items-center"/>
+      <MotionHero class="invisible lg:visible w-full h-[100dvh] scale-75 flex justify-center items-center fixed pe-[48rem] -z-[1]"/>
     </section>
-    <section class="w-full lg:max-w-xl h-[100dvh] px-20 py-8 lg:px-12 bg-grey-50 dark:bg-grey-950">
-      <AppLogomark class="w-16 h-16 mx-auto" />
-      <AppForm />
+    <section class="flex items-start justify-center lg:items-start lg:justify-start w-full lg:max-w-xl min-h-[100dvh] px-20 py-8 lg:px-12 --bg-grey-50 --dark:bg-grey-950 border-l border-grey-100 dark:border-grey-900">
+      <div>
+        <AppLogomark class="w-16 h-16 -ms-2 mb-12" />
+        <AppForm />
+      </div>
     </section>
-    <!-- <section class="w-[61.8%] h-[100dvh] fixed flex object-contain z-10 bg-white dark:bg-grey-975">
-    </section>
-    <section class="w-full h-[100dvh] flex justify-center items-center ps-[61.8%] bg-grey-975/10">
-      Init
-    </section> -->
   </div>
 </template>

@@ -2,7 +2,7 @@
   <!-- <div class="flex flex-col justify-center items-center"> -->
     <div class="max-w-md mx-auto">
 
-      <hr class="border-gray-100 dark:border-gray-900 my-6" />
+      <!-- <hr class="border-grey-100 dark:border-gray-900 my-8" /> -->
       <h3 class="text-3xl my-8 tracking-wide-xl --text-center">Request an Invite</h3>
       <p class="mb-8 text-base">
         Please tell us a bit about yourself so that we may review your request for an application.¹
@@ -111,7 +111,7 @@
         </p>
       </div> -->
 
-      <!-- Form: Question 2 -->
+      <!-- Form: Question 3 -->
       <!-- <div class="form-group">
           <textarea
             v-model="answerC"
@@ -144,8 +144,14 @@
       </button>
 
             <!-- Form Disclaimers -->
-            <span class="text-xs text-gray-500">
-        All submissions are kept secure and private.
+      <span class="text-2xs text-gray-500 flex mt-1">
+        <!-- <span class="block w-3.5 h-3.5 text-grey-600 dark:text-grey-800 me-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" />
+          </svg>
+        </span> -->
+
+        All applications are kept secure and private.
       </span>
 
     </form>
@@ -168,7 +174,6 @@ export default {
   },
   methods: {
     formSubmit() {
-      // const axios = $axios
       const vm = this
       const formElement = vm.$refs.formElement
       const formData = new FormData(formElement)
@@ -178,14 +183,10 @@ export default {
       axios
         .post(url, formData)
         .then(function (response) {
-          // eslint-disable-next-line no-undef
-          $nuxt.$router.push('/initiation/confirmation')
+          navigateTo('/')
         })
-        // eslint-disable-next-line handle-callback-err
-        // eslint-disable-next-line node/handle-callback-err
         .catch(function (error) {
-          // eslint-disable-next-line no-undef
-          $nuxt.$router.push('/initiation/confirmation')
+          navigateTo('/principles')
         })
     },
   },
