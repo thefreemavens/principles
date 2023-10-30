@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/principles/',
+    // baseURL: '/principles/',
     head: {
         // htmlAttrs: { dir: 'rtl', lang: 'he' },
     },
@@ -9,10 +9,22 @@ export default defineNuxtConfig({
   // devtools: { enabled: true },
   ssr: false,
   spaLoadingTemplate: 'apploading.html',
-  target: 'static',
-  router: {
-    base: '/principles/',
- },
+//   target: 'static',
+//   router: {
+//     base: '/principles/',
+//  },
+  nitro: { 
+    preset: 'static',
+    serveStatic: true,
+    prerender: {
+      crawlLinks: true,
+      // failOnError: false,
+      // routes: [
+      //   '/sitemap.xml',
+      //   ...routes
+      // ]
+    }
+  },
   modules: [
     '@nuxthq/ui',
     '@nuxtjs/google-fonts',
