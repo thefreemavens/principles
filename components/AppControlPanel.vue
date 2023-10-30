@@ -4,29 +4,18 @@
       <ul class="flex flex-col justify-start">
 
         <!-- Main Menu -->
-        <li class="hover:bg-grey-100/80 dark:hover:bg-grey-900/80 transition-all duration-[1555ms] hover:duration-200">
+        <li class="mx-4 my-4">
           <!-- <UTooltip text="Menu"> -->
-            <button @click="setMenu()">
-              <span
-                :class="{'rotate-[60deg]': menu, 'rotate-0': !menu}"
-                class="flex justify-center items-center transition-transform duration-300 ease-out w-12 h-12"
-              >
-                <AppPicon
-                  name="Hex"
-                  variation="outline"
-                  stroke-width="stroke-[38]"
-                  size="w-[18px] h-[18px]"
-                  color="stroke-white"
-                />
-              </span>
-            </button>
+          <NuxtLink to="https://thefreemavens.org" class="">
+            <AppLogomark class="w-11 h-11" />
+          </NuxtLink>
           <!-- </UTooltip> -->
         </li>
 
         <!-- Color Mode -->
-        <li class="hover:bg-grey-100/80 dark:hover:bg-grey-900/80 transition-all duration-[555ms] hover:duration-200">
+        <li class="">
           <!-- <UTooltip text="Color Mode"> -->
-            <button @click="isDark = !isDark">
+            <!-- <button @click="isDark = !isDark">
               <span
                 :class="{ 'rotate-[360deg]': isDark, 'rotate-0': !isDark }"
                 class="flex justify-center items-center w-12 h-12 transition-transform duration-300 ease-out"
@@ -37,7 +26,7 @@
                   size="w-[18px] h-[18px]"
                 />
               </span>
-            </button>
+            </button> -->
           <!-- </UTooltip> -->
         </li>
 
@@ -49,7 +38,7 @@
 <script setup>
 // Main Menu
 const { $lenis } = useNuxtApp()
-const menu = useMenu()
+// const menu = useMenu()
 const principles = usePrinciples()
 
 function setMenu() {

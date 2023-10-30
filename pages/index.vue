@@ -1,35 +1,46 @@
 <template>
 
-    <!-- Colums grid  -->
-    <div class="
-      fixed z-0
-      w-screen h-screen
-      grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-16 sm:px-18 md:px-20 lg:px-24 xl:px-28 gap-2
-    ">
-      <span class="border-x border-grey-100 dark:border-grey-950"/>
-      <span class="border-x border-grey-100 dark:border-grey-950"/>
-      <span class="border-x border-grey-100 dark:border-grey-950"/>
-      <span class="border-x border-grey-100 dark:border-grey-950"/>
-    </div>
-    <!-- End grid -->
+  <!-- Colums grid  -->
+  <div class="grid fixed z-0 grid-cols-1 gap-2 px-16 w-screen h-screen sm:grid-cols-2 lg:grid-cols-4 sm:px-18 md:px-20 lg:px-24 xl:px-28">
+    <span class="border-x border-grey-100 dark:border-grey-950"/>
+    <span class="border-x border-grey-100 dark:border-grey-950"/>
+    <span class="border-x border-grey-100 dark:border-grey-950"/>
+    <span class="border-x border-grey-100 dark:border-grey-950"/>
+  </div>
+  <!-- End grid -->
 
   <main class="pb-64">
     <!-- <span class="fixed top-0 left-24 text-sm">{{ appScroll }}</span> -->
     <!-- ///////////////////////////////////////////////////////////////////////////// -->
     <!-- PageNav -->
-    <ul class="fixed top-0 end-0 z-30">
+    <ul class="fixed top-0 z-30 end-0">
       <!-- Open/Close INFO_PANEL -->
+      <li class="group
+          opacity-80
+          hover:opacity-100
+          hover:bg-grey-200/80
+          dark:hover:bg-grey-800/80
+          transition-colors
+          duration-[2222ms]
+          hover:duration-200">
+        <button @click="isDark = !isDark">
+          <span
+            :class="{ 'rotate-[360deg]': isDark, 'rotate-0': !isDark }"
+            class="flex justify-center items-center w-12 h-12 transition-transform duration-300 ease-out"
+          >
+            <AppPicon
+              name="CustomColorMode"
+              variation="base"
+              size="w-[18px] h-[18px]"
+            />
+          </span>
+        </button>
+      </li>
       <li>
         <!-- v-show="appScroll < 34 && appScroll > 62 -->
         <button
           :disabled="appScroll > 62 && appScroll < 92 ? !isDisabled : isDisabled"
-          class="
-            w-12 h-12
-            flex justify-center items-center
-            hover:bg-grey-100 dark:hover:bg-grey-900
-            transition-colors duration-200
-            disabled:opacity-30
-            "
+          class="flex justify-center items-center w-12 h-12 transition-colors duration-200 hover:bg-grey-100 dark:hover:bg-grey-900 disabled:opacity-30"
           @click="isOpen = !isOpen"
         >
           <span class="text-base">
@@ -93,15 +104,15 @@
       [@supports(backdrop-filter:blur(0px))]:dark:bg-grey-975/80
     ">
       <!-- <div class="flex mb-32"> -->
-        <!-- <span v-if="principleIndex >= 0" class="flex-1 text-2xs -mt-2">INIT -> 10{{ principleIndex + 1 }}</span> -->
-        <!-- <span v-else class="flex-1 text-2xs -mt-2">INIT -></span> -->
-        <!-- <span v-else class="flex-1 text-2xs invisible md:visible">INIT -//-> Function deOccult()</span> -->
-        <!-- <span v-show="principleIndex >= 0" class="flex-1 text-2xs invisible md:visible">Deocculting now:<br> {{  appScroll }}</span> -->
+        <!-- <span v-if="principleIndex >= 0" class="flex-1 -mt-2 text-2xs">INIT -> 10{{ principleIndex + 1 }}</span> -->
+        <!-- <span v-else class="flex-1 -mt-2 text-2xs">INIT -></span> -->
+        <!-- <span v-else class="invisible flex-1 text-2xs md:visible">INIT -//-> Function deOccult()</span> -->
+        <!-- <span v-show="principleIndex >= 0" class="invisible flex-1 text-2xs md:visible">Deocculting now:<br> {{  appScroll }}</span> -->
         <!-- <span v-show="principleIndex < 0" class="flex-1 text-2xs"><AppTime /></span> -->
       <!-- </div> -->
       <!-- ///////////////////////////////////////////////////////////////////////////// -->
       <!-- INFO_PANEL: Nav: Back -->
-      <nav class="tl opacity-0 relative z-50 flex-none">
+      <nav class="relative z-50 flex-none opacity-0 tl">
         <div class="mt-10 mb-16">
           <div class="flex-1 text-2xs">
             <!-- v-show="prevPrinciple.title" -->
@@ -120,36 +131,10 @@
       <!-- ///////////////////////////////////////////////////////////////////////////// -->
       <!-- INFO_PANEL: Title -->
       <h2
-      class="
-        grow
-        h-full
-        opacity-0
-        text-4xl
-        sm:text-4xl
-        md:text-5xl
-        lg:text-6xl
-        xl:text-7xl
-        2xl:text-8xl
-        text-grey-975
-        dark:text-white
-        font-thin
-        tracking-tight
-        whitespace-nowrap
-        ">
+      class="h-full text-4xl font-thin tracking-tight whitespace-nowrap opacity-0 grow sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-grey-975 dark:text-white">
         {{ !cp?'':cp.title }}
         <sup
-        class="
-          align-super
-          text-xl
-          sm:text-2xl
-          md:text-3xl
-          lg:text-4xl
-          xl:text-5xl
-          2xl:text-6xl
-          -ms-1
-          md:-ms-2
-          lg:-ms-4
-          ">
+        class="text-xl align-super sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl -ms-1 md:-ms-2 lg:-ms-4">
             {{ principleIndex + 1 }}
           </sup>
         </h2>
@@ -157,28 +142,28 @@
         <!-- ///////////////////////////////////////////////////////////////////////////// -->
         <!-- INFO_PANEL: Desc -->
 
-        <div class="tl opacity-0 flex-none text-grey-975 dark:text-white">
+        <div class="flex-none opacity-0 tl text-grey-975 dark:text-white">
 
           <!-- INFO_PANEL: Picon -->
           <div class="flex w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 mb-8 rounded-[22%] p-4 md:p-5 bg-white/70 dark:bg-black/90 shadow-xl dark:drop-shadow-[0_8px_8px_rgba(0,0,0,0.75)]">
-            <svg v-if="cp" class="text-grey-975 dark:text-white fill-current object-contain">
+            <svg v-if="cp" class="object-contain fill-current text-grey-975 dark:text-white">
               <use v-bind="{'xlink:href': svgUrl + '#' + cp.title }" />
             </svg>
           </div>
 
           <!-- INFO_PANEL: Subtitle -->
-          <h3 class="mb-4 text-lg xl:text-xl font-bold tracking-tight leading-snug">{{ !cp?'':cp.subTitle }}</h3>
+          <h3 class="mb-4 text-lg font-bold tracking-tight leading-snug xl:text-xl">{{ !cp?'':cp.subTitle }}</h3>
           <!-- INFO_PANEL: Description -->
-          <p class="mb-6 text-xs md:text-sm max-w-xl leading-relaxed md:leading-relaxed">{{ !cp?'':cp.desc }}</p>
+          <p class="mb-6 max-w-xl text-xs leading-relaxed md:text-sm md:leading-relaxed">{{ !cp?'':cp.desc }}</p>
           
         </div>
         <!-- INFO_PANEL: Navigation -->
-        <div class="flex-none tl opacity-0 mt-6 -mb-11">
+        <div class="flex-none mt-6 -mb-11 opacity-0 tl">
           <nav class="">
                 <button
                   v-show="nextPrinciple.title"
                   size="2xs"
-                  class="text-2xs flex border-b border-transparent hover:border-black dark:hover:border-white"
+                  class="flex border-b border-transparent text-2xs hover:border-black dark:hover:border-white"
                   @click="$lenis.scrollTo('#' + nextPrinciple.title, {duration: 2})"
                 >
                   {{ nextPrinciple.title? '↓ ' + nextPrinciple.title : '' }}
@@ -196,11 +181,7 @@
     <!-- Content -->
 
     <!-- HERO -->
-    <section class="
-      grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-      px-16 sm:px-18 md:px-20 lg:px-24 xl:px-28
-      gap-0
-    ">
+    <section class="grid grid-cols-1 gap-0 px-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-18 md:px-20 lg:px-24 xl:px-28">
 
       <!-- HERO: Arrow -->
       <div class="col-span-2">
@@ -240,7 +221,7 @@
 
 
       <!-- Hero: Title Duo -->
-      <div class="col-span-4 flex relative">
+      <div class="flex relative col-span-4">
         <h2 class="mt-[2em] text-left w-full text-[12vw] lg:text-[10.1vw] xl:text-[14.5vw] transition-transform duration-[1600ms] ease-out mix-blend-difference text-white"
         :style="{transform: 'skewY(' + appVelocity + 'deg)'}">Interactively<br>+<br>Responsibly</h2>
       </div>
@@ -326,10 +307,10 @@
     
     <!-- ///////////////////////////////////////////////////////////////////////////// -->
     <!-- SCENE: SOL - Seed Of Life -->
-    <section class="relative pin-section w-screen flex justify-center items-center h-screen">
-      <div class="pin-container relative">
+    <section class="flex relative justify-center items-center w-screen h-screen pin-section">
+      <div class="relative pin-container">
 
-        <div class="pin-icon relative z-20">
+        <div class="relative z-20 pin-icon">
           <!-- <div class="pin-icon-shadow-black absolute z-0 rounded-[22%] top-[4%] left-0 dark:bg-black w-48 h-48 lg:w-96 lg:h-96 blur-xl" /> -->
           <div
             class="
@@ -441,15 +422,15 @@
 
           <!-- SOL Titles -->
           <div class="absolute bottom-4 md:bottom-8 w-full text-center text-[0.5rem] md:text-2xs tracking-[0.125rem] md:tracking-[0.25rem] uppercase ms-1 lg:ms-1">
-            <h4 class="invisible absolute w-full sol-title-ment">Mentalism</h4>
-            <h4 class="invisible absolute w-full sol-title-corr">Correspondence</h4>
-            <h4 class="invisible absolute w-full sol-title-vibr">Vibration</h4>
-            <h4 class="invisible absolute w-full sol-title-pola">Polarity</h4>
-            <h4 class="invisible absolute w-full sol-title-rhyt">Rhythm</h4>
-            <h4 class="invisible absolute w-full sol-title-caus">Causality</h4>
-            <h4 class="invisible absolute w-full sol-title-gend">Gender</h4>
-            <h4 class="invisible absolute w-full sol-title-care">Care</h4>
-            <h4 class="invisible absolute w-full sol-title-sol">The Seed of Life</h4>
+            <h4 class="absolute invisible w-full sol-title-ment">Mentalism</h4>
+            <h4 class="absolute invisible w-full sol-title-corr">Correspondence</h4>
+            <h4 class="absolute invisible w-full sol-title-vibr">Vibration</h4>
+            <h4 class="absolute invisible w-full sol-title-pola">Polarity</h4>
+            <h4 class="absolute invisible w-full sol-title-rhyt">Rhythm</h4>
+            <h4 class="absolute invisible w-full sol-title-caus">Causality</h4>
+            <h4 class="absolute invisible w-full sol-title-gend">Gender</h4>
+            <h4 class="absolute invisible w-full sol-title-care">Care</h4>
+            <h4 class="absolute invisible w-full sol-title-sol">The Seed of Life</h4>
           </div>
 
 
@@ -459,8 +440,8 @@
     
     <!-- ///////////////////////////////////////////////////////////////////////////// -->
     <!-- MAIN: Titles -->
-    <div v-show="!isOpen && appScroll > 62 && appScroll < 92" class="fixed top-0 w-screen h-screen flex justify-center items-center mt-screen">
-      <h2 class="mt-12 opacity-0 text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-black dark:text-white font-thin tracking-tight mix-blend-difference pointer-events-none">
+    <div v-show="!isOpen && appScroll > 62 && appScroll < 92" class="flex fixed top-0 justify-center items-center w-screen h-screen mt-screen">
+      <h2 class="mt-12 text-6xl font-thin tracking-tight text-black opacity-0 mix-blend-difference pointer-events-none sm:text-7xl md:text-8xl lg:text-9xl dark:text-white">
       <!-- <h2 class="mt-0 opacity-0 text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-black dark:text-white font-thin tracking-tight mix-blend-difference pointer-events-none transition-transform duration-[1600ms] ease-out"
         :style="{transform: 'skewY(' + (appVelocity) + 'deg)'}
       "> -->
@@ -473,40 +454,20 @@
     <section
       v-for="(principle, index) in principles" :key="index"
       :id="principle.title"
-      class="
-        principle
-        w-screen
-        h-screen
-        grid
-        grid-cols-1
-        justify-items-center
-        items-center
-        mix-blend-difference
-        dark:mix-blend-difference
-        mt-96
-      ">
+      class="grid grid-cols-1 justify-items-center items-center mt-96 w-screen h-screen mix-blend-difference principle dark:mix-blend-difference">
       <svg class="text-white fill-current w-[88%] h-[88%]">
         <use v-bind="{'xlink:href': svgUrl + '#' + principle.title }" />
       </svg>
     </section>
 
     <!-- FIN -->
-    <div class="
-      mt-96
-      grid grid-cols-2
-      px-16 sm:px-18 md:px-20 lg:px-24 xl:px-28
-      gap-x-2 gap-y-2
-      ">
+    <div class="grid grid-cols-2 gap-x-2 gap-y-2 px-16 mt-96 sm:px-18 md:px-20 lg:px-24 xl:px-28">
 
       <div
         class="col-span-1 transition-transform duration-[1600ms] ease-out"
         :style="{transform: 'translateY(' + appVelocity * 20 + 'px)'}"
       >
-        <div class="
-          grid grid-cols-1
-          gap-y-24 md:gap-y-36 lg:gap-y-48
-          justify-items-center
-        ">
+        <div class="grid grid-cols-1 gap-y-24 justify-items-center md:gap-y-36 lg:gap-y-48">
       
           <AppPicon
             name="Mentalism"
@@ -539,11 +500,7 @@
         class="col-span-1 transition-transform duration-[1600ms] ease-out"
         :style="{transform: 'translateY(' + appVelocity * 10 + 'px)'}"
         >
-        <div class="
-          grid grid-cols-1
-          gap-y-24 md:gap-y-36 lg:gap-y-48
-          justify-items-center
-          ">
+        <div class="grid grid-cols-1 gap-y-24 justify-items-center md:gap-y-36 lg:gap-y-48">
   
           <AppPicon
             name="Correspondence"
@@ -576,13 +533,13 @@
         :style="{transform: 'skewY(' + appVelocity + 'deg)'}">
         <div class="transition-transform duration-[1600ms] ease-out"
         :style="{transform: 'translateY(' + appVelocity * 20 + 'px)'}">
-        <h3 class="text-6xl ">
+        <h3 class="text-6xl">
           Act<br>+<br>Inspire
         </h3>
-        <p class="text-xl leading-relaxed mt-12">
+        <p class="mt-12 text-xl leading-relaxed">
           This presentation was made with true love and care in effort to inspire others to learn and act upon this utmost important knowledge; and by doing so, promoting true freedom.
         </p>
-        <button class=" text-3xl text-white bg-grey-975 dark:text-grey-975 dark:bg-white">Learn More --></button>
+        <NuxtLink to="https://thefreemavens.org/knowledge/the-great-work" class="text-3xl text-white hover:text-white bg-grey-975 dark:text-black dark:hover:text-black dark:bg-white">Learn More --></NuxtLink>
         </div>
       </div>
 
@@ -593,20 +550,16 @@
           <h3 class="text-6xl">
             Free<br>+<br>Open-Source
           </h3>
-          <p class="text-xl leading-relaxed mt-12">
+          <p class="mt-12 text-xl leading-relaxed">
             All Picons (Principles + Icons) used in this presentation are free and Open-Source. You can download, edit, modify and use them in your own work. Free for Freedom.
           </p>
-          <button class=" text-3xl text-white bg-grey-975 dark:text-grey-975 dark:bg-white">Download Picons --></button>
+          <NuxtLink to="https://thefreemavens.org/resources/picons" class="text-3xl text-white hover:text-white bg-grey-975 dark:text-black dark:hover:text-black dark:bg-white">Download Picons --></NuxtLink>
         </div>
       </div>     
 
     </div>
 
-    <div class="
-      grid grid-cols-4
-      px-16 sm:px-18 md:px-20 lg:px-24 xl:px-28
-      gap-x-2 gap-y-2
-      ">
+    <div class="grid grid-cols-4 gap-x-2 gap-y-2 px-16 sm:px-18 md:px-20 lg:px-24 xl:px-28">
       <span class=""/>
       <!-- <MotionHero class=" mt-48 col-span-2 scale-[0.75]"/> -->
 
@@ -629,6 +582,18 @@ const principleIndex = ref(Number)
 const arrowSymbolClose = '-->'
 const arrowSymbolOpen = '<--'
 const isDisabled = ref(true)
+
+// Color Mode
+const colorMode = useColorMode()
+
+const isDark = computed({
+  get () {
+    return colorMode.value === 'dark'
+  },
+  set () {
+    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+  }
+})
 
 
 

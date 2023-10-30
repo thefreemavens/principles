@@ -12,12 +12,11 @@
   "devDependencies": {
     "@hypernym/nuxt-gsap": "^2.2.2",
     "@nuxt/devtools": "latest",
-    "@nuxthq/ui": "^2.5.0",
-    "@nuxtjs/google-fonts": "^3.0.1",
     "@types/node": "^18.16.19",
     "nuxt": "^3.6.5"
   },
   "dependencies": {
+    "@nuxthq/ui": "^2.7.0",
     "@studio-freight/lenis": "^1.0.19",
     "axios": "^1.5.0"
   }

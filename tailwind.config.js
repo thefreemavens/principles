@@ -96,12 +96,11 @@ module.exports = {
       }
     },
     fontFamily: {
-      'sans': [ 'Inter', 'system-ui'],
-      'serif': ['ui-serif', 'Georgia'],
-      'mono': ['ui-monospace', 'SFMono-Regular'],
+      'body': ['Inter'],
+      'sans': [ 'Inter'],
+      'mono': ['Victor Mono', 'SFMono-Regular'],
+      // 'serif': ['ui-serif', 'Georgia'],
       // 'display': ['Major Mono Display'],
-      'body': ['Inter']
-      // 'sans': ['IBM Plex Sans', 'Inter', 'Montserrat', 'system-ui'],
     }
   },
 }

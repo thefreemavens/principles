@@ -27,7 +27,7 @@
     class="flex rounded-[22%]">
     <svg
       :class="strokeWidth"
-      class="stroke-current fill-none object-contain origin-center subpixel-antialiased"
+      class="object-contain subpixel-antialiased origin-center stroke-current fill-none"
       stroke="currentcolor"
     >
       <use v-bind="{'xlink:href': url + '#' + name }" />
@@ -62,7 +62,7 @@
      ">
       <svg
         :class="[size, color.base]"
-        class="fill-current object-contain">
+        class="object-contain fill-current">
         <use v-bind="{'xlink:href': url + '#' + name }" />
       </svg>
     </div>
@@ -71,7 +71,7 @@
 </template>
 
 <script setup>
-import { _strokeWidth } from '#tailwind-config/theme';
+// import { _strokeWidth } from '#tailwind-config/theme';
 import svgUrl from '~/assets/svg/icons/picons-xl.svg'
 const props = defineProps({
   name: {

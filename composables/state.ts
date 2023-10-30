@@ -1,7 +1,7 @@
 // UseState
 // Docs: https://nuxt.com/docs/getting-started/state-management#shared-state
 
-export const useMenu = () => useState<boolean>('menu', () => false)
+// export const useMenu = () => useState<boolean>('menu', () => false)
 // export const useLenisScroll = () => useState<boolean>('lenisScroll', () => false)
 // export const useLenisVelocity = () => useState<boolean>('lenisVelocity', () => false)
 
